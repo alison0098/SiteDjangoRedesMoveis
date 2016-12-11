@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Sensores</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style>
+     .body{ background-image: url(/static/img/2.jpg); background-repeat: repeat; }
+     .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height: 30px;
+        background-color: green;
+        color: white;
+     }
+     h3{
+        font-weight: bold;
+        color:#003366;
+     }
+     h2{
+        color:green;
+     }
+    </style>
+
+
+    </head>
+
+    <body>
+
+        <div>
+
+        </div>
+        <div class="jumbotron text-center body" >
+        <img class"align-left" src="/static/img/logo_unb.png" alt ="logo"/>
+            <h2> <strong> {{nome_local}} </strong> </h2>
+        </div>
+  
+     <div class="container">
+                           
+	   <table class="table">
+       <thead>
+       <tr>
+
+        <th> <h3 class= "text-center" >Logs de Acesso</h3></th>
+
+       </tr>
+       </thead>
+       
+       <tbody>
+         <tr>
+                {% if query %}
+            
+                    {% for dados in query %}
+
+                        <td class="text-center" >{{dados.data}}</td>
+                        
+         </tr>
+
+                    {% endfor %}
+
+
+                {% else %}
+                    <td> Sem Registros.</td>
+                {% endif %}
+        </tbody>
+       </table>
+       </div>
+
+
+    <footer class="footer">
+      <div class="container">
+        <p class=" text-center"> Desenvolvido por alunos da disciplina Tópicos Avançados em Computadores - Universidade de Brasília. </p>
+      </div>
+    </footer>
+    </body>
+</html> 
